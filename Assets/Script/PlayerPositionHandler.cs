@@ -11,7 +11,7 @@ public class PlayerPositionHandler : MonoBehaviour
 
     void Start()
     {
-        
+        // GameManager.Instance.CheckSaveFile();
     }
 
     public void OnCheckpoint(GameObject col)
@@ -47,4 +47,9 @@ public class PlayerPositionHandler : MonoBehaviour
     {
         transform.position = newPosition;
     } 
+
+    public void OnFinish()
+    {
+        GameManager.Instance.ChangeScene(0);
+    }
 }

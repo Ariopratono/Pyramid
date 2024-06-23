@@ -54,8 +54,15 @@ public class GameManager : MonoBehaviour
     //berguna untuk Check Save File ada atau tidak
     public void CheckSaveFile()
     {
-        if (File.Exists(Application.dataPath + "/Level.json")) LoadLevel();
-        else SaveLevel();
+        if (File.Exists(Application.dataPath + "/Level.json")) 
+        {
+            LoadLevel();
+        }
+        else
+        {
+            SaveLevel();
+        } 
+            
     }
 		//berguna untuk save level ke json
     private void SaveLevel()
@@ -73,28 +80,28 @@ public class GameManager : MonoBehaviour
         LevelData levelData = JsonUtility.FromJson<LevelData>(json);
         levelCurrent = levelData.level;
     }
-    //berguna untuk Load Level dan assign ke game manager
-    private void CheckLevel()
-    {
-        LoadLevel();
-        levelCurrent = levelData.level;
-    }
-		//berguna untuk mengganti nilai level / assign level
+    // //berguna untuk Load Level dan assign ke game manager
+    // private void CheckLevel()
+    // {
+    //     LoadLevel();
+    //     levelCurrent = levelData.level;
+    // }
+	// 	//berguna untuk mengganti nilai level / assign level
     public void ChangeLevel(int newLevelUnlocked)
     {
         levelCurrent = newLevelUnlocked;
         SaveLevel();
     }
-		//berguna untuk reset level
-    public void ResetLevel()
-    {
-        levelCurrent = 0;
-        SaveLevel();
-    }
+	// 	//berguna untuk reset level
+    // public void ResetLevel()
+    // {
+    //     levelCurrent = 0;
+    //     SaveLevel();
+    // }
 
     #endregion
 
-    #region Panel Management Data
-    public bool isStart;
-    #endregion
+    // #region Panel Management Data
+    // public bool isStart;
+    // #endregion
 }

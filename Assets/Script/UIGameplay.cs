@@ -3,8 +3,8 @@ using UnityEngine.UI;
 
 public class UIGameplay : MonoBehaviour 
 {   
-    [Header("Scene Index")]
-    [SerializeField] private int sceneIndex = 0;
+//     [Header("Scene Index")]
+//     [SerializeField] private int sceneIndex = 0;
 
     [Header("Gameplay Buttons")]
     public Button buttonResume;
@@ -13,7 +13,7 @@ public class UIGameplay : MonoBehaviour
 
     private void Start() 
     {
-        buttonMenu.onClick.AddListener(() => GameManager.Instance.ChangeScene(sceneIndex));
+        buttonMenu.onClick.AddListener(() => GameManager.Instance.ChangeScene(0));
         buttonPause.onClick.AddListener(HandleButtonClick);
         buttonResume.onClick.AddListener(HandleButtonClick);
     }
